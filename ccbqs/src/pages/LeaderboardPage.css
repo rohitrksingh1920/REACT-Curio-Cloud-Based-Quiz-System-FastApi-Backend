@@ -1,0 +1,100 @@
+.lb-info-bar {
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  flex-wrap: wrap;
+}
+
+.lb-info-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-2);
+}
+.lb-info-item i { font-size: 17px; color: var(--text-3); }
+
+.lb-podium {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.lb-top-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 24px 20px;
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-lg);
+  min-width: 160px;
+  flex: 1;
+  max-width: 200px;
+  transition: box-shadow 0.2s;
+  box-shadow: var(--shadow-xs);
+}
+.lb-top-card:hover { box-shadow: var(--shadow-md); }
+
+/* First place card is taller */
+.lb-top-card:has(.lb-top-medal:first-child) {
+  padding-top: 32px;
+}
+
+.lb-top-medal {
+  font-size: 36px;
+  line-height: 1;
+}
+
+.lb-top-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-1);
+  text-align: center;
+  font-family: var(--font-display);
+}
+
+.lb-top-score {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--primary);
+  font-family: var(--font-display);
+}
+
+.lb-top-detail {
+  font-size: 12px;
+  color: var(--text-3);
+}
+
+.lb-me {
+  border-color: var(--primary) !important;
+  background: var(--primary-light) !important;
+  box-shadow: 0 0 0 3px var(--primary-glow) !important;
+}
+
+.lb-rank-badge {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-2);
+  font-family: var(--font-display);
+}
+
+.lb-me-row {
+  background: var(--primary-light) !important;
+}
+.lb-me-row td { font-weight: 600; }
+
+/* Rank 1: gold tint, Rank 2: silver, Rank 3: bronze */
+.lb-rank-1 { background: linear-gradient(135deg,#fffbea,#fff8d6) !important; }
+.lb-rank-2 { background: linear-gradient(135deg,#f8f8f8,#efefef) !important; }
+.lb-rank-3 { background: linear-gradient(135deg,#fff4ee,#ffe8d6) !important; }
+
+@media (max-width: 600px) {
+  .lb-podium { gap: 10px; }
+  .lb-top-card { min-width: 120px; padding: 16px 12px; }
+}

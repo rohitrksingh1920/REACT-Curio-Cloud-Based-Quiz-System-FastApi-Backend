@@ -1,0 +1,32 @@
+.analytics-charts {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.analytics-chart-card {
+  padding: 24px;
+}
+
+.analytics-chart-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.analytics-chart-header h3 {
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+
+.analytics-chart-header p {
+  font-size: 13px;
+  color: var(--text-2);
+}
+
+@media (max-width: 900px) {
+  .analytics-charts {
+    grid-template-columns: 1fr;
+  }
+}
