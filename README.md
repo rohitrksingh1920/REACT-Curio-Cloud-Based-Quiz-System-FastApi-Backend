@@ -1,10 +1,10 @@
-# 🎓 Curio — Cloud Quiz Platform
+# Curio — Cloud Based Quiz Platform
 
 > A full-stack cloud-based quiz management system built with **FastAPI** (backend) and **React + Vite** (frontend). Supports role-based access for **Admins**, **Teachers**, and **Students** with real-time analytics, leaderboards, and notifications.
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 REACT CCBQS/
@@ -87,7 +87,7 @@ REACT CCBQS/
 
 ---
 
-## 🚀 Quick Start
+##  Quick Start
 
 ### Prerequisites
 
@@ -159,7 +159,7 @@ npm run dev      # Vite dev server on http://localhost:5173
 
 ---
 
-## 🔑 Demo Accounts
+##  Demo Accounts
 
 | Role | Email | Password |
 |---|---|---|
@@ -170,7 +170,7 @@ npm run dev      # Vite dev server on http://localhost:5173
 
 ---
 
-## 🌐 API Reference
+##  API Reference
 
 Base URL: `http://localhost:8000`
 
@@ -215,7 +215,7 @@ Interactive docs: [`/docs`](http://localhost:8000/docs) (Swagger UI)
 
 ---
 
-## ⚙️ Environment Variables (`.env`)
+##  Environment Variables (`.env`)
 
 ```env
 #  Database 
@@ -245,7 +245,7 @@ EMAILS_FROM_NAME=Curio
 
 ---
 
-## 🎨 Frontend Tech Stack
+##  Frontend Tech Stack
 
 | Library | Version | Purpose |
 |---|---|---|
@@ -260,7 +260,7 @@ EMAILS_FROM_NAME=Curio
 
 ---
 
-## 🛡️ Role-Based Access
+##  Role-Based Access
 
 | Feature | Student | Teacher | Admin |
 |---|---|---|---|
@@ -275,7 +275,7 @@ EMAILS_FROM_NAME=Curio
 
 ---
 
-## 🔧 Maintenance Scripts
+##  Maintenance Scripts
 
 ```bash
 # Update app (git pull + migrate + reload)
@@ -292,7 +292,7 @@ gunzip < backups/curio_20260415_120000.sql.gz | \
 
 ---
 
-## 🐳 Docker Details
+##  Docker Details
 
 ```bash
 # View logs
@@ -314,7 +314,7 @@ docker exec curio_backend python -m backend.app.seed
 
 ---
 
-## 📦 Building for Production
+##  Building for Production
 
 ```bash
 # 1. Build React app
@@ -333,7 +333,7 @@ docker compose -f docker-compose.yml up --build -d
 
 ---
 
-## 🧪 Running Alembic Migrations
+##  Running Alembic Migrations
 
 ```bash
 # Create a new migration
@@ -351,7 +351,7 @@ alembic history --verbose
 
 ---
 
-## 🤝 Contributing
+##  Contributing
 
 1. Fork the repository
 2. Create a feature branch: `git checkout -b feature/your-feature`
@@ -361,7 +361,7 @@ alembic history --verbose
 
 ---
 
-## 📄 License
+##  License
 
 MIT License — see [LICENSE](LICENSE) for details.
 
