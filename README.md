@@ -319,7 +319,7 @@ docker exec curio_backend python -m backend.app.seed
 ```bash
 # 1. Build React app
 cd frontend-react
-npm run build          # → outputs to THE2/frontend/
+npm run build          # → outputs to REACT CCBQS/ccbqs/
 
 # 2. Update .env for production
 #    - Set DEBUG=False
@@ -367,4 +367,4 @@ MIT License — see [LICENSE](LICENSE) for details.
 
 ---
 
-Built with ❤️ by the Rohit team.
+Built with ❤️ by the Rohit.
