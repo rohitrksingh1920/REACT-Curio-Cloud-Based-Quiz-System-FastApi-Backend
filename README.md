@@ -7,7 +7,7 @@
 ## 📁 Project Structure
 
 ```
-THE2/
+REACT CCBQS/
 ├── alembic/                    # Database migration scripts
 │   └── versions/
 ├── alembic.ini                 # Alembic configuration
@@ -42,7 +42,7 @@ THE2/
 │   ├── Dockerfile
 │   ├── requirements.txt
 │   └── venv/
-├── frontend-react/             # ← NEW: React source (this folder)
+├── ccbqs/             
 │   ├── src/
 │   │   ├── api/index.js        # All API calls
 │   │   ├── context/
@@ -218,22 +218,22 @@ Interactive docs: [`/docs`](http://localhost:8000/docs) (Swagger UI)
 ## ⚙️ Environment Variables (`.env`)
 
 ```env
-# ── Database ──────────────────────────────────────────────────────────────────
+#  Database 
 DATABASE_URL=postgresql://curio_user:localdevpass@localhost:5432/curio_db
 
-# ── Auth ──────────────────────────────────────────────────────────────────────
+#  Auth 
 SECRET_KEY=your-secret-key-min-32-characters-change-this
 ALGORITHM=HS256
 ACCESS_TOKEN_EXPIRE_MINUTES=1440
 
-# ── App ───────────────────────────────────────────────────────────────────────
+#  App 
 APP_NAME=Curio
 APP_VERSION=1.0.0
 DEBUG=True
 ENVIRONMENT=development
 FRONTEND_ORIGINS=["http://localhost","http://localhost:5173","http://localhost:80"]
 
-# ── Email (optional — needed for OTP password reset) ─────────────────────────
+#  Email (optional — needed for OTP password reset) 
 SMTP_HOST=smtp.gmail.com
 SMTP_PORT=587
 SMTP_USER=your@gmail.com
@@ -367,4 +367,4 @@ MIT License — see [LICENSE](LICENSE) for details.
 
 ---
 
-Built with ❤️ by the Curio team.
+Built with ❤️ by the Rohit team.
