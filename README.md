@@ -1,13 +1,13 @@
-# 🎓 Curio — Cloud Quiz Platform
+#  Curio — Cloud Quiz Platform
 
 > A full-stack cloud-based quiz management system built with **FastAPI** (backend) and **React + Vite** (frontend). Supports role-based access for **Admins**, **Teachers**, and **Students** with real-time analytics, leaderboards, live countdowns, and notifications. All timestamps are displayed in **IST (India Standard Time, UTC+5:30)**.
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
-THE2/
+REACT CCBQS/
 ├── alembic/                        # Database migration scripts
 │   ├── versions/
 │   └── env.py
@@ -44,7 +44,7 @@ THE2/
 │   ├── Dockerfile
 │   ├── requirements.txt
 │   └── venv/
-├── frontend-react/                 # React source code
+├── ccbqs/                 # React source code
 │   ├── src/
 │   │   ├── api/
 │   │   │   └── index.js            # All API calls (AuthAPI, QuizAPI, …)
@@ -98,7 +98,7 @@ THE2/
 
 ---
 
-## 🚀 Quick Start
+##  Quick Start
 
 ### Prerequisites
 
@@ -171,7 +171,7 @@ npm run dev      # Vite dev server → http://localhost:5173
 
 ---
 
-## 🔑 Demo Accounts
+##  Demo Accounts
 
 | Role | Email | Password |
 |---|---|---|
@@ -183,7 +183,7 @@ npm run dev      # Vite dev server → http://localhost:5173
 
 ---
 
-## 🌐 API Reference
+##  API Reference
 
 Base URL: `http://localhost:8000`
 
@@ -256,7 +256,7 @@ Interactive docs: [`/docs`](http://localhost:8000/docs) — Swagger UI with Bear
 
 ---
 
-## ⚙️ Environment Variables (`.env`)
+##  Environment Variables (`.env`)
 
 ```env
 # ── Database ──────────────────────────────────────────────────────────────────
@@ -294,7 +294,7 @@ EMAILS_FROM_NAME=Curio
 
 ---
 
-## 🕐 Timezone — IST (UTC+5:30)
+##  Timezone — IST (UTC+5:30)
 
 All timestamps in Curio are handled in **India Standard Time (IST, UTC+5:30)**:
 
@@ -340,7 +340,7 @@ export function formatCompactIST(isoString) { /* "20 Jun, 2:45 PM" */ }
 
 ---
 
-## 🎨 Frontend Tech Stack
+##  Frontend Tech Stack
 
 | Library | Version | Purpose |
 |---|---|---|
@@ -356,7 +356,7 @@ export function formatCompactIST(isoString) { /* "20 Jun, 2:45 PM" */ }
 
 ---
 
-## 🛡️ Role-Based Access
+##  Role-Based Access
 
 | Feature | Student | Teacher | Admin |
 |---|---|---|---|
@@ -375,7 +375,7 @@ Enforcement happens at both layers — frontend (React Router `ProtectedRoute`) 
 
 ---
 
-## 🔧 Maintenance Scripts
+##  Maintenance Scripts
 
 ```bash
 # First-time production deploy on EC2
@@ -395,7 +395,7 @@ gunzip < backups/curio_20260415_120000.sql.gz | \
 
 ---
 
-## 🐳 Docker Details
+##  Docker Details
 
 ```bash
 # View live logs
@@ -422,12 +422,12 @@ docker exec curio_backend python -m backend.app.seed
 
 ---
 
-## 📦 Building for Production
+##  Building for Production
 
 ```bash
 # 1. Build the React frontend
 cd frontend-react
-npm run build          # outputs to THE2/frontend/ (served by Nginx automatically)
+npm run build          # outputs to REACT CCBQS/frontend/ (served by Nginx automatically)
 cd ..
 
 # 2. Harden your .env for production
@@ -446,7 +446,7 @@ curl http://localhost/health
 
 ---
 
-## 🧪 Alembic Migrations
+##  Alembic Migrations
 
 ```bash
 # Generate a migration from model changes
@@ -503,7 +503,7 @@ Dark mode is toggled by `AuthContext.setDark(true/false)` and persisted in `loca
 
 ---
 
-## 🤝 Contributing
+##  Contributing
 
 1. Fork the repository
 2. Create a feature branch: `git checkout -b feature/your-feature`
@@ -513,10 +513,10 @@ Dark mode is toggled by `AuthContext.setDark(true/false)` and persisted in `loca
 
 ---
 
-## 📄 License
+##  License
 
 MIT License — see [LICENSE](LICENSE) for details.
 
 ---
 
-Built with ❤️ by the Curio team · All times displayed in **IST (UTC+5:30)**
+Built with ❤️ by Rohit· All times displayed in **IST (UTC+5:30)**
