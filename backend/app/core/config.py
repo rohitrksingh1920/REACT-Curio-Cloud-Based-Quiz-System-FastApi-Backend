@@ -13,25 +13,25 @@ _ENV_FILE = os.path.normpath(
 
 
 class Settings(BaseSettings):
-    # ── Application ──────────────────────────────────────────────────────────
+    #  Application 
     APP_NAME:    str = "Curio"
     APP_VERSION: str = "1.0.0"
     DEBUG:       bool = True
     ENVIRONMENT: str = "development"
 
-    # ── PostgreSQL ────────────────────────────────────────────────────────────
+    #  PostgreSQL 
     DATABASE_URL:    str = "postgresql://postgres:1234@localhost:5432/curio_db"
     DB_POOL_SIZE:    int = 10
     DB_MAX_OVERFLOW: int = 20
     DB_POOL_TIMEOUT: int = 30
     DB_POOL_RECYCLE: int = 1800
 
-    # ── JWT ───────────────────────────────────────────────────────────────────
+    #  JWT 
     SECRET_KEY:                  str = "supersecret-CHANGE-THIS-in-production"
     ALGORITHM:                   str = "HS256"
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 60 * 24  # 24 hours
 
-    # ── CORS — include all origins that the frontend is served from ───────────
+    #  CORS — include all origins that the frontend is served from 
     FRONTEND_ORIGINS: List[str] = [
         "http://localhost",
         "http://localhost:80",
@@ -41,17 +41,17 @@ class Settings(BaseSettings):
         "null",                  # file:// origin used during local dev
     ]
 
-    # ── SMTP (OTP emails) ─────────────────────────────────────────────────────
+    #  SMTP (OTP emails) 
     SMTP_HOST:         str = "smtp.gmail.com"
     SMTP_PORT:         int = 587
     SMTP_USER:         str = ""
     SMTP_PASS:         str = ""
     EMAILS_FROM_NAME:  str = "Curio"
 
-    # ── Static files ──────────────────────────────────────────────────────────
+    #  Static files 
     STATIC_BASE_URL: str = ""
 
-    # ── Deployment (EC2 / production) ─────────────────────────────────────────
+    #  Deployment (EC2 / production) 
     EC2_PUBLIC_IP:  str       = ""
     ALLOWED_HOSTS:  List[str] = ["*"]
 

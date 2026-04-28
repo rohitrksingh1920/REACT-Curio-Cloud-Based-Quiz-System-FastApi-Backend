@@ -259,29 +259,29 @@ Interactive docs: [`/docs`](http://localhost:8000/docs) — Swagger UI with Bear
 ##  Environment Variables (`.env`)
 
 ```env
-# ── Database ──────────────────────────────────────────────────────────────────
+#  Database 
 DATABASE_URL=postgresql://curio_user:localdevpass@localhost:5432/curio_db
 DB_POOL_SIZE=5
 DB_MAX_OVERFLOW=10
 DB_POOL_TIMEOUT=30
 DB_POOL_RECYCLE=1800
 
-# ── Auth ──────────────────────────────────────────────────────────────────────
+#  Auth 
 SECRET_KEY=your-secret-key-min-32-characters-change-this-in-production
 ALGORITHM=HS256
 ACCESS_TOKEN_EXPIRE_MINUTES=1440
 
-# ── App ───────────────────────────────────────────────────────────────────────
+#  App 
 APP_NAME=Curio
 APP_VERSION=1.0.0
 DEBUG=True
 ENVIRONMENT=development
 FRONTEND_ORIGINS=["http://localhost","http://localhost:5173","http://localhost:80"]
 
-# ── Timezone ──────────────────────────────────────────────────────────────────
+#  Timezone 
 TZ=Asia/Kolkata     # Optional Docker-level override for consistency
 
-# ── Email — needed for OTP password reset ────────────────────────────────────
+#  Email — needed for OTP password reset 
 SMTP_HOST=smtp.gmail.com
 SMTP_PORT=587
 SMTP_USER=your@gmail.com

@@ -1,6 +1,6 @@
 
 
-# ── Stage 1: dependency builder ────────────────────────────────────────────
+#  Stage 1: dependency builder 
 FROM python:3.11-slim AS builder
 
 # Install build dependencies (not needed in final image)
@@ -23,7 +23,7 @@ RUN pip install --upgrade pip setuptools wheel --quiet && \
         -r /build/requirements.txt
 
 
-# ── Stage 2: production runtime ────────────────────────────────────────────
+#  Stage 2: production runtime 
 FROM python:3.11-slim AS runtime
 
 # Labels
@@ -39,7 +39,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 # Copy installed packages from builder stage
 COPY --from=builder /install /usr/local
 
-# ── Non-root user for security ─────────────────────────────────────────────
+#  Non-root user for security 
 RUN groupadd --gid 1001 appgroup && \
     useradd  --uid 1001 --gid appgroup --shell /bin/bash --create-home appuser
 
@@ -62,11 +62,11 @@ EXPOSE 8000
 # Switch to non-root user
 USER appuser
 
-# ── Health check ────────────────────────────────────────────────────────────
+#  Health check 
 HEALTHCHECK --interval=30s --timeout=10s --start-period=15s --retries=3 \
     CMD curl -f http://localhost:8000/health || exit 1
 
-# ── Default command ─────────────────────────────────────────────────────────
+#  Default command 
 # For production: uses Gunicorn with Uvicorn workers
 # For development: override in docker-compose with uvicorn --reload
 CMD ["gunicorn", "backend.app.main:app", \

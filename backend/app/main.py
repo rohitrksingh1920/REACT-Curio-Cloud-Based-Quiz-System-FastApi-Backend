@@ -18,18 +18,18 @@ from fastapi.openapi.utils import get_openapi
 from backend.app.core.config import settings
 from backend.app.core.database import Base, engine, check_db_connection
 
-# ── Register ALL models before create_all() ──────────────────────────────────
+#  Register ALL models before create_all() 
 from backend.app.models.user import User                                        
 from backend.app.models.quiz import Quiz, Question, QuestionOption, QuizEnrollment  
 from backend.app.models.attempt import QuizAttempt, AttemptAnswer               
 from backend.app.models.notification import Notification                        
 
-# ── Routers ───────────────────────────────────────────────────────────────────
+#  Routers 
 from backend.app.routers import auth, dashboard, quiz, analytics
 from backend.app.routers import settings as settings_router
 from backend.app.routers import notifications, leaderboard, admin
 
-# ── Ensure static directories exist on startup ───────────────────────────────
+#  Ensure static directories exist on startup 
 _STATIC_DIR  = os.path.join(os.getcwd(), "static")
 _AVATARS_DIR = os.path.join(_STATIC_DIR, "avatars")
 os.makedirs(_AVATARS_DIR, exist_ok=True)
@@ -69,7 +69,7 @@ app = FastAPI(
     lifespan=lifespan,
 )
 
-# ── CORS ─────────────────────────────────────────────────────────────────────
+#  CORS 
 app.add_middleware(
     CORSMiddleware,
     allow_origins=settings.FRONTEND_ORIGINS,
@@ -80,7 +80,7 @@ app.add_middleware(
 )
 
 
-# ── Request logger ────────────────────────────────────────────────────────────
+#  Request logger 
 @app.middleware("http")
 async def log_requests(request: Request, call_next):
     try:
@@ -95,7 +95,7 @@ async def log_requests(request: Request, call_next):
     return response
 
 
-# ── API routers — MUST come before StaticFiles mounts ────────────────────────
+#  API routers — MUST come before StaticFiles mounts 
 app.include_router(auth.router,             prefix="/api/auth",          tags=["Auth"])
 app.include_router(dashboard.router,        prefix="/api/dashboard",     tags=["Dashboard"])
 app.include_router(quiz.router,             prefix="/api/quizzes",       tags=["Quizzes"])
@@ -105,11 +105,11 @@ app.include_router(notifications.router,    prefix="/api/notifications", tags=["
 app.include_router(leaderboard.router,      prefix="/api/leaderboard",   tags=["Leaderboard"])
 app.include_router(admin.router,            prefix="/api/admin",         tags=["Admin"])
 
-# ── Static files (avatars uploaded by users) ─────────────────────────────────
+#  Static files (avatars uploaded by users) 
 app.mount("/static", StaticFiles(directory=_STATIC_DIR), name="static")
 
 
-# ── Health endpoint ───────────────────────────────────────────────────────────
+#  Health endpoint 
 @app.get("/health", include_in_schema=False)
 def health():
     return {
@@ -120,7 +120,7 @@ def health():
     }
 
 
-# ── Global exception handler ──────────────────────────────────────────────────
+#  Global exception handler 
 @app.exception_handler(Exception)
 async def generic_exception_handler(request: Request, exc: Exception):
     logger.exception(f"Unhandled error on {request.method} {request.url.path}: {exc}")
@@ -130,7 +130,7 @@ async def generic_exception_handler(request: Request, exc: Exception):
     )
 
 
-# ── Custom OpenAPI schema with Bearer auth ────────────────────────────────────
+#  Custom OpenAPI schema with Bearer auth 
 def custom_openapi():
     if app.openapi_schema:
         return app.openapi_schema

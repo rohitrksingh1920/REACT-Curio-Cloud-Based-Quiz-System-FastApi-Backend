@@ -8,7 +8,7 @@ from backend.app.models.user import UserRole
 from backend.app.models.notification import NotificationType
 
 
-# ── Quiz Attempt ──────────────────────────────────────────────────────────────
+#  Quiz Attempt 
 
 class SubmitAnswerItem(BaseModel):
     question_id: int
@@ -39,7 +39,7 @@ class AttemptResult(BaseModel):
     model_config = {"from_attributes": True}
 
 
-# ── Enrollment ────────────────────────────────────────────────────────────────
+#  Enrollment 
 
 class EnrollRequest(BaseModel):
     """Body for POST /api/quizzes/{id}/enroll"""
@@ -69,7 +69,7 @@ class EnrollResponse(BaseModel):
     message: str
 
 
-# ── Dashboard ─────────────────────────────────────────────────────────────────
+#  Dashboard 
 
 class DashboardStats(BaseModel):
     total_quizzes:      int
@@ -77,7 +77,7 @@ class DashboardStats(BaseModel):
     avg_score:          float
 
 
-# ── Analytics ─────────────────────────────────────────────────────────────────
+#  Analytics 
 
 class ScoreTrendPoint(BaseModel):
     date:      str
@@ -98,7 +98,7 @@ class AnalyticsSummary(BaseModel):
     subject_performance: List[SubjectPerformance]
 
 
-# ── Leaderboard ───────────────────────────────────────────────────────────────
+#  Leaderboard 
 
 class LeaderboardEntry(BaseModel):
     rank:            int
@@ -122,7 +122,7 @@ class LeaderboardResponse(BaseModel):
     current_user_rank: Optional[int] = None
 
 
-# ── User / Settings ───────────────────────────────────────────────────────────
+#  User / Settings 
 
 class UserProfileUpdate(BaseModel):
     full_name:        Optional[str]  = None
@@ -204,7 +204,7 @@ class NotificationPrefsUpdate(BaseModel):
     push_alerts:   Optional[bool] = None
 
 
-# ── Notifications ─────────────────────────────────────────────────────────────
+#  Notifications 
 
 class NotificationOut(BaseModel):
     id:         int
