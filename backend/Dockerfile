@@ -46,7 +46,8 @@ RUN groupadd --gid 1001 appgroup && \
 WORKDIR /app
 
 # Copy the entire project (backend.app.* imports need the full tree)
-COPY --chown=appuser:appgroup . /app
+# COPY --chown=appuser:appgroup . /app
+COPY --chown=appuser:appgroup backend /app/backend
 
 # Create required runtime directories
 RUN mkdir -p /app/static/avatars /var/log/curio && \
